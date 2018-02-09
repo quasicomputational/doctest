@@ -14,11 +14,10 @@ module Runner (
 import           Prelude hiding (putStr, putStrLn, error)
 
 #if __GLASGOW_HASKELL__ < 710
-import           Data.Monoid
+import           Data.Monoid hiding ((<>))
 import           Control.Applicative
-#else
-import Data.Semigroup
 #endif
+import           Data.Semigroup
 
 import           Control.Monad hiding (forM_)
 import           Text.Printf (printf)

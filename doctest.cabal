@@ -61,6 +61,7 @@ library
     , filepath
     , process
     , ghc-paths     >= 0.1.0.9
+    , semigroups
     , transformers
 
 executable doctest
@@ -97,6 +98,7 @@ test-suite spec
     , filepath
     , process
     , ghc-paths
+    , semigroups
     , transformers
 
     , base-compat
