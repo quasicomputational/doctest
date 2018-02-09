@@ -17,7 +17,7 @@ import           Prelude hiding (putStr, putStrLn, error)
 import           Data.Monoid hiding ((<>))
 import           Control.Applicative
 #endif
-#if __GLASGOW_HASKELL__ < 830
+#if !MIN_VERSION_base(4,11,0)
 import           Data.Semigroup
 #endif
 
