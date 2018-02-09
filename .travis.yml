@@ -61,9 +61,7 @@ before_install:
   - cabal --version
   - travis_retry cabal update
   - sed -i 's/^jobs:/-- jobs:/' ${HOME}/.cabal/config
-  - ALLOW_NEWER=''
-  - if ${GHCHEAD-false} ; then ALLOW_NEWER='--allow-newer' ; fi
-  - cabal install --enable-tests --only-dep $ALLOW_NEWER
+  - cabal install --enable-tests --only-dep
 
 script:
   - WERROR='--ghc-options=-Werror'
