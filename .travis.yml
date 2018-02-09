@@ -68,5 +68,5 @@ before_install:
 script:
   - WERROR='--ghc-options=-Werror'
   - if ${GHCHEAD-false} ; then WERROR='' ; fi
-  - (cd ghci-wrapper && cabal configure --enable-tests $WERROR $ALLOW_NEWER && cabal build && cabal test)
-  - cabal configure --enable-tests $WERROR $ALLOW_NEWER && cabal build && cabal test
+  - (cd ghci-wrapper && cabal configure --enable-tests $WERROR && cabal build && cabal test)
+  - cabal configure --enable-tests $WERROR && cabal build && cabal test
