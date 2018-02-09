@@ -17,7 +17,9 @@ import           Prelude hiding (putStr, putStrLn, error)
 import           Data.Monoid hiding ((<>))
 import           Control.Applicative
 #endif
+#if __GLASGOW_HASKELL__ < 840
 import           Data.Semigroup
+#endif
 
 import           Control.Monad hiding (forM_)
 import           Text.Printf (printf)
