@@ -61,8 +61,9 @@ before_install:
   - cabal --version
   - travis_retry cabal update
   - sed -i 's/^jobs:/-- jobs:/' ${HOME}/.cabal/config
-  - cabal install --enable-tests --only-dep --dry-run
-  - cabal install --enable-tests --only-dep
+  - CONSTRAINTS='--constraint=HUnit==1.6.0.0 --constraint=hspec==2.4.7 --constraint=hspec-expectations==0.8.2'
+  - cabal install --enable-tests --only-dep --dry-run $CONSTRAINTS
+  - cabal install --enable-tests --only-dep $CONSTRAINTS
 
 script:
   - WERROR='--ghc-options=-Werror'
